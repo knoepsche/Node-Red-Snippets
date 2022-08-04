@@ -7,3 +7,5 @@
 - ui-temp get tabinfo
 - ui-temp modal dialog
 - ui-temp icons
+- ui-temp list
+- duration tests
