@@ -1,0 +1,49 @@
+[
+    {
+        "id": "3070c17a7eed1205",
+        "type": "ui_button",
+        "z": "a56bde124d673012",
+        "name": "",
+        "group": "c2fc6f8ceca1aa7f",
+        "order": 4,
+        "width": "7",
+        "height": "1",
+        "passthru": false,
+        "label": "Set Content",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-play",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "Content",
+        "topicType": "str",
+        "x": 990,
+        "y": 320,
+        "wires": [
+            [
+                "ab714e67bbc44e72"
+            ]
+        ]
+    },
+    {
+        "id": "c2fc6f8ceca1aa7f",
+        "type": "ui_group",
+        "name": "Tools",
+        "tab": "85eef7cbe34c88d0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "85eef7cbe34c88d0",
+        "type": "ui_tab",
+        "name": "DEV | URL Integraciones",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
