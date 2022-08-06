@@ -737,6 +737,15 @@
         "hidden": false
     },
     {
+        "id": "dadefbe1d7a5b60a",
+        "type": "ui_group",
+        "name": "Group 7",
+        "tab": "911a0d7d34b66434",
+        "order": 7,
+        "disp": true,
+        "width": 6
+    },
+    {
         "id": "ffa780bb.8fd62",
         "type": "function",
         "z": "e0e6e559.8f30d8",
@@ -924,16 +933,16 @@
         "group": "150a555a50d00122",
         "name": "",
         "order": 0,
-        "width": 0,
-        "height": 0,
-        "format": "<script>\n(function(scope){\nvar testShowAlert = function ($mdDialog) {\nvar alert = $mdDialog.alert({\ntitle: 'Attention',\ntextContent: 'This is an example of how simple dialogs can be!',\nok: 'Close'\n});\n\n  $mdDialog\n    .show( alert )\n    .finally(function() {\n      alert = undefined;\n    });\n}\n\nscope.showAlert = function() {\n       var injector = angular.element(\"#nr-dashboard\").injector();\n       injector.invoke(testShowAlert,null,null);\n};\n\n})(scope);\n</script>\n<button ng-click=\"showAlert()\">Test Alert</button>",
+        "width": "6",
+        "height": "2",
+        "format": "<script>\n    (function(scope){\n        var testShowAlert = function ($mdDialog) {\n            var alert = $mdDialog.alert({\n                title: 'Attention',\n                textContent: 'This is an example of how simple dialogs can be!',\n                ok: 'Close'\n            });\n        \n            $mdDialog\n                .show( alert )\n                .finally(function() {\n                  alert = undefined;\n                });\n        }\n        \n        var testShowDialog = function ($mdDialog) {\n            const ctrl = DialogController;\n            const parentEl = angular.element(document.body);\n            $mdDialog.show({\n                parent: parentEl,\n                template:\n                    '<md-dialog aria-label=\"List dialog\">' +\n                    '  <md-dialog-content>'+\n                    '    <md-list>'+\n                    '      <md-list-item ng-repeat=\"item in ctrl.items\">'+\n                    '       <p>Number {{item}}</p>' +\n                    '    </md-list-item></md-list>'+\n                    '  </md-dialog-content>' +\n                    '  <md-dialog-actions>' +\n                    '    <md-button ng-click=\"ctrl.closeDialog()\" class=\"md-primary\">' +\n                    '      Close Dialog' +\n                    '    </md-button>' +\n                    '  </md-dialog-actions>' +\n                    '</md-dialog>',\n                locals: {\n                    items: ctrl.items\n                },\n                controller: DialogController,\n                controllerAs: 'ctrl'\n            });\n            function DialogController($mdDialog) {\n                this.items = [124, 2345, 5678];\n                this.closeDialog = function() {\n                    $mdDialog.hide();\n                }\n            }\n        }\n            \n        \n        scope.showAlert = function() {\n           var injector = angular.element(\"#nr-dashboard\").injector();\n           injector.invoke(testShowAlert,null,null);\n        };\n        \n        scope.showDialog = function($event) {\n           var injector = angular.element(\"#nr-dashboard\").injector();\n           console.log(injector);\n           injector.invoke(testShowDialog,null,null);\n        };\n    \n    })(scope);\n</script>\n<button ng-click=\"showAlert()\">Test Alert</button>\n<button ng-click=\"showDialog($event)\">Test Dialog</button>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 980,
-        "y": 320,
+        "x": 900,
+        "y": 280,
         "wires": [
             []
         ]
@@ -1141,7 +1150,7 @@
         "order": 0,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    #Tab_Integraciones{\n        height: unset !important;\n    }\n    \n\n    #Integraciones_Integracion_1, \n    #Integraciones_Integration_2, \n    #Integraciones_Integration_3, \n    #Integraciones_integracion_4 {\n        height: initial !important;\n    }\n    \n    \n    #Integraciones_Integracion_1_cards[style],\n    #Integraciones_Integracion_2_cards[style],\n    #Integraciones_Integracion_3_cards[style],\n    #Integraciones_Integracion_4_cards[style]\n    {\n        height: fit-content !important;\n    }\n    \n    \n    .group-integracion{\n        height: initial !important;\n    }\n    \n    .group-integracion md-card.nr-dashboard-spacer{\n        align-items: flex-start !important;\n        position: relative !important;\n        top: 0px !important;\n        \n    }\n    \n    .main-title-content{\n        align-items: flex-start !important;\n        height: auto !important;\n        position: relative !important;\n    }\n    \n    .no-gap{\n        top: 0px !important;\n    }\n    \n</style>",
+        "format": "<style>\n    #Tab_Integraciones{\n        height: unset !important;\n    }\n    \n\n    #Integraciones_Integracion_1, \n    #Integraciones_Integration_2, \n    #Integraciones_Integration_3, \n    #Integraciones_integracion_4{\n        height: initial !important;\n    }\n    \n    \n    #Integraciones_Integracion_1_cards[style],\n    #Integraciones_Integracion_2_cards[style],\n    #Integraciones_Integracion_3_cards[style],\n    #Integraciones_Integracion_4_cards[style]{\n        height: fit-content !important;\n    }\n    \n    \n    .group-integracion{\n        height: initial !important;\n    }\n    \n    .group-integracion md-card.nr-dashboard-spacer{\n        align-items: flex-start !important;\n        position: relative !important;\n        top: 0px !important;\n        \n    }\n    \n    .main-title-content{\n        align-items: flex-start !important;\n        height: auto !important;\n        position: relative !important;\n    }\n    \n    .no-gap{\n        top: 0px !important;\n    }\n    \n</style>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
